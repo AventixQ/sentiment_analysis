@@ -38,15 +38,15 @@ Uncomment the following lines in the main.py file (if needed):
 
 python main.py
 
-##Overview
+## Overview
 
 The sentiment analysis is performed using the VADER (Valence Aware Dictionary and sEntiment Reasoner) sentiment analysis tool. The code includes functions to read the dataset, tokenize the text, perform sentiment analysis, calculate sentiment scores, visualize the results, and create a CSV file with the actual and predicted sentiments. It also calculates various metrics such as precision, recall, F-measure, and accuracy based on the predicted sentiments.
 
-##Dataset
+## Dataset
 
-The Amazon reviews dataset is used for this sentiment analysis. The dataset can be found at the following link: Amazon Reviews Dataset [https://www.kaggle.com/datasets/bittlingmayer/amazonreviews]
+The Amazon reviews dataset is used for this sentiment analysis. The dataset can be found at the following link: [Amazon Reviews Dataset](https://www.kaggle.com/datasets/bittlingmayer/amazonreviews)
 
-##Results
+## Results
 
 The code allows working with individual sentences or a specific database.
 
@@ -56,7 +56,7 @@ For more extensive databases the code generates various visualizations, includin
 
 It also creates CSV files with the actual and predicted sentiments for both 2-class (positive/negative) and 3-class (positive/negative/neutral) sentiment categories. Metrics such as precision, recall, F-measure, and accuracy are calculated and printed for each sentiment category.
 
-##Conclusion
+## Conclusion
 
 This project demonstrates the application of VADER sentiment analysis on the Amazon reviews dataset. It provides insights into the sentiment distribution and allows for the evaluation of the sentiment analysis performance using various metrics.
 

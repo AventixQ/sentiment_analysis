@@ -142,8 +142,8 @@ def calculate_accuracy(actual_sentiment: pd.DataFrame, predicted_sentiment: pd.D
     accuracy = TP / total_samples
     return accuracy
 
-#Printing Confusion Matrix, Accurancy, Precision, Recall, F-measure
-def calculate_metrics(size = 3):
+#Printing Confusion Matrix, Accurancy, Precision, Recall, F1-measure
+def calculate_metrics(size = 3): #size is number of Class Classification. Have to be > 1 and suitable for your data.
     df = pd.read_csv(f'./sentiment_results{size}.csv')
 
     actual_sentiment = df['actual_sentiment']
@@ -166,7 +166,7 @@ def calculate_metrics(size = 3):
     print("Confusion Matrix:")
     print(confusion_matrix)
 
-    #Precision, Recall, Accurancy, F-measure
+    #Precision, Recall, Accurancy, F1-measure
     precision_per_class = {}
     recall_per_class = {}
     for label in unique_labels:
@@ -190,7 +190,7 @@ def calculate_metrics(size = 3):
     avg_recall = sum(recall_per_class.values()) / size
     print(avg_recall)
 
-    print("Average F-measure:")
+    print("Average F1-measure:")
     print(2 * (avg_precision * avg_recall) / (avg_precision + avg_recall) if avg_precision + avg_recall != 0 else 0.0, end = "\n\n")
 
 def main():
@@ -200,19 +200,21 @@ def main():
     #Creating tokens and taggs and analyzing seperate sentence
     #text = input('Put your sentence here: ') #input of your example to test
     text = data['Text'][50] #example from Amazon data
+    print("Sentence to analyse: ", text)
     tokens = tokenize(text)
     print("Tokens of given sentence:")
     print(tokens)
     print("Taggs of given sentence:")
     print(tagged(tokens))
     print("Sentiment analysis:")
-    print(sia.polarity_scores(text))
+    print(sia.polarity_scores(text), end = "\n")
 
     #Calculating sentiment scores with VADER
     sentence_scores = calculate_sentiment_scores(data)
 
     #Output of created data
-    print(sentence_scores)
+    print("Created database:")
+    print(sentence_scores, end = "\n")
 
     #Visualization of results
     scatter_plot(sentence_scores)
