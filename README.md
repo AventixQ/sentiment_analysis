@@ -16,7 +16,7 @@ This project performs sentiment analysis on a dataset using VADER (Valence Aware
 
 1. Clone the repository to your local machine:
 
-git clone https://github.com/your_username/sentiment_analysis.git
+git clone https://github.com/AventixQ/sentiment_analysis.git
 
 
 2. Install the required packages using pip:
